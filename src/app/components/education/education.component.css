@@ -1,0 +1,93 @@
+.education
+{
+    background-color: #171C23;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    height: 85vh;
+    width: 100%;
+}
+
+.education h2
+{
+    color: #fff;
+    font-size: 30px;
+    font-weight: 600;
+    margin: 0;
+    padding: 50px 50px;
+    width: 100%;
+}
+
+.education-cards 
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2vw;
+    width: 100%;
+}
+
+.education-cards div
+{
+    background-color: #21272F;
+    border-radius: 5px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 20px 15px 0px 15px;
+    transition: all 500ms;
+    width: 40%;
+}
+
+.education-cards div:hover
+{
+    box-shadow: 0px 10px 20px 1px rgba(0,189,149,0.2);
+    padding: 20px 15px;
+}
+
+.education-cards div li
+{
+    list-style: none;
+}
+
+.education-cards div h3
+{
+    color: #00BD95;
+}
+
+.education-cards div h5
+{
+    padding-left: 5px;
+}
+
+.education-cards div a
+{
+    background: linear-gradient(90deg, rgba(24,205,138,1) 0%, rgba(0,189,149,1) 52%);
+    background: rgb(24,205,138);
+    border-radius: 10px;
+    box-shadow: 0px 10px 20px 1px rgba(0,189,149,0.2);
+    color: #21272F;
+    display: flex;
+    font-size: 15px;
+    margin: 0 auto;
+    opacity: 0;
+    padding: 5px 10px;
+    text-decoration: none;
+    transition: all 500ms;
+    width: 100px;
+}
+
+
+.education-cards a:hover
+{
+    outline: 2px solid #FFF;
+    color: #FFF;
+    
+}
+
+.education-cards div a:hover
+{
+    color: #fff;
+}
+.education-cards div:hover a
+{
+    opacity: 1;
+}

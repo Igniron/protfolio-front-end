@@ -1,0 +1,18 @@
+<div class="education">
+  <h2>Education</h2>
+
+  <div class="education-cards">
+
+    <div *ngFor=" let education of buffer">
+      <h3>{{education.name}}</h3> 
+      <h5>{{education.tittle}}</h5>
+      <ul>
+        <li>{{education.state}}</li>
+        <li>{{education.average}}</li>
+      </ul>
+      <a href={{education.link}} target="_blank">Learn more</a>
+    </div>
+
+  </div>
+  
+  </div>

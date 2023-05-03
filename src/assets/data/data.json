@@ -1,0 +1,72 @@
+{
+  "header":
+  {
+    "name": "Ignacio Nicolás Roncal",
+    "profession": "Full stack web developer",
+    "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur cumque inventore eos temporibus corporis doloribus reiciendis. In voluptatum ex accusantium dolor sed iusto harum nulla iure, iste architecto saepe accusamus?",
+    "img": "https://i.pinimg.com/originals/44/3d/97/443d97d304c187f324b8d94e7f245f61.png"
+  },
+  "education":
+  [
+    {
+      "name": "Instituto Dante Alighieri.",
+      "tittle": "Bachiller en informática 2003 - 2016.",
+      "state": "Primario y secundario completos.",
+      "average": "Promedio 8.",
+      "link": "https://dantebariloche.edu.ar/"
+    },
+    {
+      "name": "Universidad Nacional de Río Negro.",
+      "tittle": "Lic. en Telecomunicaciones 2017 - Present.",
+      "state": "4th year on the carrer.",
+      "average": null,
+      "link": "https://www.unrn.edu.ar/home"
+    },
+    {
+      "name": "React: De cero a Experto - Hernando Herrera.",
+      "tittle": null,
+      "state": "Finished course.",
+      "average": null,
+      "link": "https://www.udemy.com/course/react-cero-experto/?kw=React&src=sac"
+    },
+    {
+      "name": "Argentina Programa.",
+      "tittle": null,
+      "state": "Second stage in progress.",
+      "average": null,
+      "link": "https://www.argentina.gob.ar/economia/conocimiento/argentina-programa"
+    }
+  ],
+  "recentProjects":
+  [
+    {
+      "tittle": "Gif app",
+      "description": "App created with React 18 with didactic reasons. GIF search engine that consumes the GIPHY api.",
+      "link": "https://github.com/Igniron/gif-app-18",
+      "img": "../assets/img/gifs.png"
+    },
+    {
+      "tittle": "Journal app",
+      "description": "App to write and save notes created with React 18, Firebase and Cloudinary. The objective of the project is to learn how to implement tools.",
+      "link": "https://github.com/Igniron/journal-app-18",
+      "img": "../assets/img/journal.png"
+    },
+    {
+      "tittle": "Calendar app",
+      "description": "Calendar app capable of creating and storing events created with the MERN stack tools (Mongo db, Express, React, Node js).",
+      "link": "https://github.com/Igniron/mern-calendar-18-front",
+      "img": "../assets/img/calendar.png"
+    }
+  ],
+  "contact":
+  {
+    "home": "La Primavera 4582.",
+    "location": "San Carlos de bariloche, Rio Negro, Argentina.",
+    "phone": "(+54) 294-4503217",
+    "email": "ignacioroncal98@gmail.com",
+    "instagram": "https://www.instagram.com/nachoroncal/",
+    "twitter": "https://twitter.com/NachRoncal",
+    "linkedin": "https://www.linkedin.com/in/ignacio-roncal-79b48a223/",
+    "github": "https://github.com/Igniron"
+  }
+}

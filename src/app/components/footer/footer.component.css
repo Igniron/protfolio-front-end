@@ -1,0 +1,114 @@
+footer
+{
+    align-items: center;
+    background-color: #21272F;
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    height: 40vh;
+    justify-content: center;
+    width: 100%;
+}
+
+footer div
+{
+    display: flex;
+    height: 100%;
+}
+
+.contact
+{
+    align-items: flex-start;
+    font-size: 27px;
+    font-weight: 700;
+    justify-content: center;
+    padding: 45px 0px 0px 0px;
+    width: 20%;
+}
+
+.more-info
+{
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 44px 0px 0px 0px;
+    width: 30%;
+}
+.more-info div
+{
+    display: flex;
+    flex-direction: column;
+}
+.more-info div p:nth-child(2)
+{
+    margin-bottom: 100px;
+}
+
+.more-info div p:nth-child(3), .more-info div p:nth-child(4)
+{
+    font-size: 12px;
+    text-decoration: underline;
+    text-underline-offset: 6px;
+}
+
+
+.social-networks 
+{
+    align-items: center;
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 35px;
+    width: 25%;
+}
+
+.social-networks ul
+{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    list-style: none;
+}
+
+.social-networks ul li a
+{
+    align-items: center;
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    justify-content: flex-start;
+    text-decoration-color: transparent;
+    text-decoration: none;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: all 250ms;
+}
+
+.social-networks ul li a:hover
+{
+    color: #00BD95;
+    text-decoration-color: #00BD95;
+}
+
+.back-to-menu
+{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.back-to-menu a svg
+{
+    color: #00BD95;
+    height: 50px;
+    transition: all 600ms;
+    width: 50px;
+}
+
+.back-to-menu a:hover svg
+{
+    color: #fff;
+    transform: rotate(360deg);
+}

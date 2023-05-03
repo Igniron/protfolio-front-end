@@ -1,0 +1,83 @@
+nav
+{
+    align-items: center;
+    backdrop-filter: blur(10px);
+    background-color: #21272f53;
+    color: #FFFF;
+    display: flex;
+    font-family: 'Montserrat', sans-serif;
+    height: 15vh;
+    justify-content: space-between;
+    padding: 0px 50px;
+    position: fixed;
+    width: 100%;
+}
+
+.nav-left
+{
+    font-weight: 700;
+    user-select: none;
+}
+.nav-left svg
+{
+    color: #00BD95;
+    height: 40px;
+    width: 40px;
+}
+
+.nav-mid
+{
+    display: flex;
+    flex-direction: row;
+    gap: 6vw;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+}
+
+.nav-mid li a
+{
+    color: #FFF;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 250ms;
+}
+
+.nav-mid li a:hover
+{
+    color: #00BD95;
+}
+
+.nav-right 
+{
+    background: linear-gradient(90deg, rgba(24,205,138,1) 0%, rgba(0,189,149,1) 52%);
+    background: rgb(24,205,138);
+    border-radius: 10px;
+    box-shadow: 0px 5px 20px 1px rgba(0,189,149,0.15);
+    color: #21272F;
+    padding: 3px 12px;
+    transition: all 250ms;
+}
+.nav-right:hover
+{
+    border: 2px solid #FFF;
+    color: #FFF;
+}
+
+.nav-ham
+{
+    display: none;
+}
+
+@media (max-width: 768px)
+{
+    .nav-ham
+    {
+        display: inline;
+    }
+
+    .nav-right, .nav-mid
+    {
+        display: none;
+    }
+}
