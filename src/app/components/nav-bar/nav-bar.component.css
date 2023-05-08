@@ -2,14 +2,13 @@ nav
 {
     align-items: center;
     backdrop-filter: blur(10px);
-    background-color: #21272f53;
+    background-color: #21272F;
     color: #FFFF;
     display: flex;
     font-family: 'Montserrat', sans-serif;
     height: 15vh;
     justify-content: space-between;
     padding: 0px 50px;
-    position: fixed;
     width: 100%;
 }
 
