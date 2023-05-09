@@ -6,7 +6,6 @@
   </div>
   
   <ul class="nav-mid">
-    <li><a href="#">Home</a></li>
     <li><a href="#education">Education</a></li>
     <li><a href="#habilities">Habilities</a></li>
     <li><a href="#projects">Projects</a></li>
@@ -14,8 +13,24 @@
   </ul>
   
   <button class="nav-right">Login</button>
-  <div class="nav-ham">
+  <div 
+    class="nav-ham"
+    (click)=toggleMenu()
+  >
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M3 18v-2h18v2H3Zm0-5v-2h18v2H3Zm0-5V6h18v2H3Z"/></svg>
   </div>
     
 </nav>
+
+<ng-container *ngTemplateOutlet="mytemplate; context: { isOpen: isMenuOpen }"></ng-container>
+
+<ng-template #mytemplate let-isOpen="isOpen">
+  <div class="ham-menu-container" *ngIf="isMenuOpen">
+    <ul class="ham-menu">
+        <li><a href="#education">Education</a></li>
+        <li><a href="#habilities">Habilities</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</ng-template>
