@@ -42,7 +42,7 @@ footer div
 }
 .more-info div p:nth-child(2)
 {
-    margin-bottom: 100px;
+    margin-bottom: 5vw;
 }
 
 .more-info div p:nth-child(3), .more-info div p:nth-child(4)
@@ -112,3 +112,44 @@ footer div
     color: #fff;
     transform: rotate(360deg);
 }
+
+@media (max-width: 720px)
+{   
+    
+    .social-networks 
+    {
+        padding-left: 0px;
+    }
+}
+
+@media (max-width: 620px)
+{
+    footer
+    {
+        height: 100%;
+        padding-bottom: 20px;
+        justify-content: space-evenly;
+    }
+    .contact
+    {
+        display: none !important;
+    }
+
+    .social-networks ul
+    {
+        padding-left: 20px;
+    }
+
+    .more-info div p:nth-child(1), .more-info div p:nth-child(2), .social-networks ul li a
+    {
+        font-size: 12px;
+    }
+
+    .more-info div p:nth-child(3), .more-info div p:nth-child(4)
+    {
+        font-size: 8px;
+    }
+
+
+}
+

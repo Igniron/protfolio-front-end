@@ -43,11 +43,6 @@
     padding: 20px 15px;
 }
 
-.education-cards div li
-{
-    list-style: none;
-}
-
 .education-cards div h3
 {
     color: #00BD95;
@@ -58,8 +53,14 @@
     padding-left: 5px;
 }
 
+.education-cards div li
+{
+    list-style: none;
+}
+
 .education-cards div a
 {
+    align-items: center;
     background: linear-gradient(90deg, rgba(24,205,138,1) 0%, rgba(0,189,149,1) 52%);
     background: rgb(24,205,138);
     border-radius: 10px;
@@ -67,6 +68,7 @@
     color: #21272F;
     display: flex;
     font-size: 15px;
+    justify-content: center;
     margin: 0 auto;
     opacity: 0;
     padding: 5px 10px;
@@ -90,4 +92,52 @@
 .education-cards div:hover a
 {
     opacity: 1;
+}
+
+@media (max-width: 768px)
+{
+    .education
+    {
+        height: 100%;
+        padding-bottom: 20px;
+    }
+
+    .education-cards 
+    {
+        flex-direction: column;
+    }
+    .education-cards div 
+    {
+        width: 80%;
+    }
+}
+
+@media (max-width: 510px)
+{
+    .education h2
+    {
+        font-size: 25px;
+    }
+    .education-cards div
+    {
+        margin-bottom: 30px;
+    }
+    .education-cards div h3
+    {
+        font-size: 20px;
+    }
+    .education-cards div h5
+    {
+        font-size: 15px;
+    }
+    .education-cards div li
+    {
+        font-size: 12px;
+    }
+    .education-cards div a
+    {
+        font-size: 12px;
+        padding: 3px 5px;
+    }
+
 }

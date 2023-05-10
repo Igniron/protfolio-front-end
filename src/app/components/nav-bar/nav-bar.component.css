@@ -17,12 +17,13 @@ nav
 {
     font-weight: 700;
     user-select: none;
+    font-size: 20px;
 }
 .nav-left svg
 {
     color: #00BD95;
-    height: 40px;
-    width: 40px;
+    height: 50px;
+    width: 50px;
 }
 
 .nav-mid
@@ -39,6 +40,7 @@ nav
 {
     color: #FFF;
     font-weight: 500;
+    font-size: 20px;
     text-decoration: none;
     transition: all 250ms;
 }
@@ -48,7 +50,7 @@ nav
     color: #00BD95;
 }
 
-.nav-right 
+.nav-right, .ham-button
 {
     background: linear-gradient(90deg, rgba(24,205,138,1) 0%, rgba(0,189,149,1) 52%);
     background: rgb(24,205,138);
@@ -58,7 +60,7 @@ nav
     padding: 3px 12px;
     transition: all 250ms;
 }
-.nav-right:hover
+.nav-right:hover, .ham-button:hover
 {
     border: 2px solid #FFF;
     color: #FFF;
@@ -66,9 +68,16 @@ nav
 
 .nav-ham
 {
+    align-items: center;
     cursor: pointer;
     display: none;
+    justify-content: center;
     transition: all 250ms;
+}
+.nav-ham svg 
+{
+    width: 30px;
+    height: 30px;
 }
 .nav-ham:hover
 {
@@ -85,19 +94,20 @@ nav
     display: none;
     justify-content: flex-end;
     align-items: center;
-    padding-right: 80px;
+    padding-right: 50px;
 }
 
 .ham-menu
 {
+    align-items: flex-end;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: center;
     list-style: none;
-    padding: 0;
     margin: 0;
-}
-
-.ham-menu li 
-{
-    padding-bottom: 20px;
+    padding: 0;
+    width: 100%;
 }
 
 .ham-menu li a
@@ -105,6 +115,9 @@ nav
     text-decoration: none;
     color: #fff;
     transition: all 250ms;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
 }
 
@@ -113,12 +126,19 @@ nav
     color: #00BD95;
 }
 
+.ham-button
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-@media (max-width: 768px)
+
+@media (max-width: 850px)
 {
     .nav-ham
     {
-        display: inline;
+        display: flex;
     }
 
     .nav-right, .nav-mid
@@ -129,5 +149,46 @@ nav
     .ham-menu-container
     {
         display: flex;
+       
     }
 }
+
+@media (max-width: 650px)
+{
+    nav
+    {
+        height: 15vh;
+    }
+
+    .nav-left
+    {
+        font-size: 13px;
+    }
+    .nav-left svg
+    {
+        width: 30px;
+        height: 30px;
+    }
+    .nav-ham svg
+    {
+        width: 25px;
+        height: 25px;
+    }
+    .ham-menu-container
+    {
+        height: 20vh;
+    }
+    .ham-menu
+    {
+        gap: 10px;
+    }
+    .ham-menu li a, .ham-button
+    {
+        font-size: 13px;
+    }
+    .ham-button
+    {
+        padding: 3px 12px;
+    }
+}
+

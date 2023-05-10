@@ -52,3 +52,34 @@
 {
     box-shadow: 0px 10px 20px 1px rgba(0,189,149,0.2);
 }
+
+
+@media (max-width: 900px)
+{
+    .projects
+    {
+        height: 100%;
+        padding-bottom: 20px;
+    }
+    .projects-conteiner
+    {
+        flex-direction: column;
+    }
+    .project-card
+    {
+        width: 80%;
+    }
+}
+
+@media (max-width: 550px)
+{
+    
+    .project-card h3
+    {
+        font-size: 20px;
+    }
+    .project-card p 
+    {
+        font-size: 12px;
+    }
+}
