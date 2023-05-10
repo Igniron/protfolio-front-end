@@ -18,10 +18,9 @@ export class HeaderComponent {
   ngOnInit(): void
   {
     this.portfoliodata.obtainData().subscribe( data =>
-      {
-        console.log(data);
-        this.buffer = data.header;
-      });
+    {
+      console.log(data);
+      this.buffer = data.header;
+    });
   }
-
 }
