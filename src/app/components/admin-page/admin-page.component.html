@@ -1,0 +1,81 @@
+<div class="page-conteiner">
+    <div class="admin-nav">
+        <h2>Administration page</h2>
+        <a href="">Logout</a>
+    </div>
+
+    <div class="admin-window">
+        <div class="admin-card">
+
+            <div class="admin-header">
+
+                <h3 class="admin-title">Header</h3>
+
+                <form>
+                    <input type="text" class="admin-input" [value]="buffer?.header.name">
+                    <input type="text" class="admin-input" [value]="buffer?.header.profession">
+                    <textarea type="text" class="admin-textarea admin-input" [value]="buffer?.header.description"></textarea>
+                    <input type="submit" value="Save" class="admin-save">
+                </form>
+
+            </div>
+
+            <div class="admin-education">
+
+                <h3 class="admin-title">Education</h3>
+
+                <form>
+                    <div class="education-conteiner" *ngFor=" let education of buffer?.education">
+                        <input type="text" class="admin-input" [value]="education.name" placeholder="Name">
+                        <input type="text" class="admin-input" [value]="education.tittle" placeholder="Title">
+                        <input type="text" class="admin-input" [value]="education.state" placeholder="State">
+                        <input type="text" class="admin-input" [value]="education.average" placeholder="Averge">
+                        <input type="text" class="admin-input" [value]="education.link" placeholder="Link">
+                        <input type="submit" value="Delete" class="admin-save admin-delete">
+                    </div>
+                    <input type="submit" value="Add" class="admin-save">
+                    <input type="submit" value="Save" class="admin-save">
+                </form>
+
+            </div>
+
+            <div class="admin-project">
+
+                <h3 class="admin-title">Recent projects</h3>
+
+                <form>
+                    <div class="project-conteiner" *ngFor=" let projects of buffer?.recentProjects">
+                        <input type="text" class="admin-input" [value]="projects.tittle" placeholder="Name">
+                        <input type="text" class="admin-input" [value]="projects.description" placeholder="Title">
+                        <input type="text" class="admin-input" [value]="projects.link" placeholder="State">
+                        <input type="text" class="admin-input" [value]="projects.img" placeholder="Averge">
+                        <input type="submit" value="Delete" class="admin-save admin-delete">
+                    </div>
+                    <input type="submit" value="Add" class="admin-save">
+                    <input type="submit" value="Save" class="admin-save">
+                </form>
+
+            </div>
+
+            <div class="admin-contact">
+
+                <h3 class="admin-title">Footer</h3>
+
+                <form>
+                    <input type="text" class="admin-input" [value]="buffer?.contact.home">
+                    <input type="text" class="admin-input" [value]="buffer?.contact.location">
+                    <input type="text" class="admin-input" [value]="buffer?.contact.phone">
+                    <input type="text" class="admin-input" [value]="buffer?.contact.email">
+                    <input type="text" class="admin-input" [value]="buffer?.contact.instagram">
+                    <input type="text" class="admin-input" [value]="buffer?.contact.twitter">
+                    <input type="text" class="admin-input" [value]="buffer?.contact.linkedin">
+                    <input type="text" class="admin-input" [value]="buffer?.contact.github">
+                    <input type="submit" value="Save" class="admin-save">
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+

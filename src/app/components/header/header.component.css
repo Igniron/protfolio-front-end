@@ -81,12 +81,13 @@ header p
     padding: 5px 12px;
     text-decoration: none;
     transition: all 250ms;
+    border: transparent solid 2px;
 }
 
 .conteiner-left-bottom a:hover
 {
     color: #FFF;
-    outline: 2px solid #FFF;
+    border-color: #fff;
 }
 
 .conteiner-right

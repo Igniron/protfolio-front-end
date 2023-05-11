@@ -64,6 +64,7 @@
     background: linear-gradient(90deg, rgba(24,205,138,1) 0%, rgba(0,189,149,1) 52%);
     background: rgb(24,205,138);
     border-radius: 10px;
+    border: solid 2px transparent;
     box-shadow: 0px 10px 20px 1px rgba(0,189,149,0.2);
     color: #21272F;
     display: flex;
@@ -80,7 +81,7 @@
 
 .education-cards a:hover
 {
-    outline: 2px solid #FFF;
+    border-color: #fff;
     color: #FFF;
     
 }
