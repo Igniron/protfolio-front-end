@@ -1,7 +1,7 @@
 <div class="page-conteiner">
     <div class="admin-nav">
         <h2>Administration page</h2>
-        <a href="">Logout</a>
+        <a routerLink="/">Logout</a>
     </div>
 
     <div class="admin-window">
@@ -12,9 +12,9 @@
                 <h3 class="admin-title">Header</h3>
 
                 <form>
-                    <input type="text" class="admin-input" [value]="buffer?.header.name">
-                    <input type="text" class="admin-input" [value]="buffer?.header.profession">
-                    <textarea type="text" class="admin-textarea admin-input" [value]="buffer?.header.description"></textarea>
+                    <input type="text" class="admin-input" [value]="buffer?.header.name" name="name">
+                    <input type="text" class="admin-input" [value]="buffer?.header.profession" name="profession">
+                    <textarea type="text" class="admin-textarea admin-input" [value]="buffer?.header.description" name="description"></textarea>
                     <input type="submit" value="Save" class="admin-save">
                 </form>
 
@@ -24,19 +24,35 @@
 
                 <h3 class="admin-title">Education</h3>
 
-                <form>
-                    <div class="education-conteiner" *ngFor=" let education of buffer?.education">
-                        <input type="text" class="admin-input" [value]="education.name" placeholder="Name">
-                        <input type="text" class="admin-input" [value]="education.tittle" placeholder="Title">
-                        <input type="text" class="admin-input" [value]="education.state" placeholder="State">
-                        <input type="text" class="admin-input" [value]="education.average" placeholder="Averge">
-                        <input type="text" class="admin-input" [value]="education.link" placeholder="Link">
+                <div class="education-conteiner" *ngFor=" let education of buffer?.education">
+                    <form>
+                        <input type="text" class="admin-input" [value]="education.name" placeholder="Name" name="name">
+                        <input type="text" class="admin-input" [value]="education.tittle" placeholder="Title" name="title">
+                        <input type="text" class="admin-input" [value]="education.state" placeholder="State" name="state">
+                        <input type="text" class="admin-input" [value]="education.average" placeholder="Averge" name="average">
+                        <input type="text" class="admin-input" [value]="education.link" placeholder="Link" name="link">
                         <input type="submit" value="Delete" class="admin-save admin-delete">
-                    </div>
-                    <input type="submit" value="Add" class="admin-save">
-                    <input type="submit" value="Save" class="admin-save">
-                </form>
+                        <input type="submit" value="Save" class="admin-save">
+                    </form>
+                </div>
 
+                <input type="submit" value="Add" class="admin-save admin-add" (click)=toggleMenuEducation()>
+
+                <ng-container *ngTemplateOutlet="educationtemplate; context: { isOpen: isMenuOpenEducation }"></ng-container>
+
+                <ng-template #educationtemplate let-isOpen="isOpen">
+
+                    <form *ngIf="isMenuOpenEducation"> 
+                        <input type="text" class="admin-input" [value]="" placeholder="Name" name="name">
+                        <input type="text" class="admin-input" [value]="" placeholder="Title" name="title">
+                        <input type="text" class="admin-input" [value]="" placeholder="State" name="state">
+                        <input type="text" class="admin-input" [value]="" placeholder="Averge" name="average">
+                        <input type="text" class="admin-input" [value]="" placeholder="Link" name="link">
+                        <input type="submit" value="Save" class="admin-save">
+                    </form>
+
+                </ng-template>
+                
             </div>
 
             <div class="admin-project">
@@ -45,15 +61,30 @@
 
                 <form>
                     <div class="project-conteiner" *ngFor=" let projects of buffer?.recentProjects">
-                        <input type="text" class="admin-input" [value]="projects.tittle" placeholder="Name">
-                        <input type="text" class="admin-input" [value]="projects.description" placeholder="Title">
-                        <input type="text" class="admin-input" [value]="projects.link" placeholder="State">
-                        <input type="text" class="admin-input" [value]="projects.img" placeholder="Averge">
+                        <input type="text" class="admin-input" [value]="projects.tittle" placeholder="Name" name="title">
+                        <input type="text" class="admin-input" [value]="projects.description" placeholder="Description" name="description">
+                        <input type="text" class="admin-input" [value]="projects.link" placeholder="Link" name="link">
+                        <input type="text" class="admin-input" [value]="projects.img" placeholder="Img" name="img">
                         <input type="submit" value="Delete" class="admin-save admin-delete">
+                        <input type="submit" value="Save" class="admin-save">
                     </div>
-                    <input type="submit" value="Add" class="admin-save">
-                    <input type="submit" value="Save" class="admin-save">
                 </form>
+                
+                <input type="submit" value="Add" class="admin-save" (click)=toggleMenuProject()>
+
+                <ng-container *ngTemplateOutlet="projecttemplate; context: { isOpen: isMenuOpenProject }"></ng-container>
+
+                <ng-template #projecttemplate let-isOpen="isOpen">
+
+                    <form *ngIf="isMenuOpenProject"> 
+                        <input type="text" class="admin-input" [value]="" placeholder="Name" name="title">
+                        <input type="text" class="admin-input" [value]="" placeholder="Description" name="description">
+                        <input type="text" class="admin-input" [value]="" placeholder="Link" name="link">
+                        <input type="text" class="admin-input" [value]="" placeholder="Img" name="img">
+                        <input type="submit" value="Save" class="admin-save">
+                    </form>
+
+                </ng-template>
 
             </div>
 
@@ -62,14 +93,14 @@
                 <h3 class="admin-title">Footer</h3>
 
                 <form>
-                    <input type="text" class="admin-input" [value]="buffer?.contact.home">
-                    <input type="text" class="admin-input" [value]="buffer?.contact.location">
-                    <input type="text" class="admin-input" [value]="buffer?.contact.phone">
-                    <input type="text" class="admin-input" [value]="buffer?.contact.email">
-                    <input type="text" class="admin-input" [value]="buffer?.contact.instagram">
-                    <input type="text" class="admin-input" [value]="buffer?.contact.twitter">
-                    <input type="text" class="admin-input" [value]="buffer?.contact.linkedin">
-                    <input type="text" class="admin-input" [value]="buffer?.contact.github">
+                    <input type="text" class="admin-input" [value]="buffer?.contact.home" name="home">
+                    <input type="text" class="admin-input" [value]="buffer?.contact.location" name="location">
+                    <input type="text" class="admin-input" [value]="buffer?.contact.phone" name="phone">
+                    <input type="text" class="admin-input" [value]="buffer?.contact.email" name="email">
+                    <input type="text" class="admin-input" [value]="buffer?.contact.instagram" name="instagram">
+                    <input type="text" class="admin-input" [value]="buffer?.contact.twitter" name="twitter">
+                    <input type="text" class="admin-input" [value]="buffer?.contact.linkedin" name="linkedin">
+                    <input type="text" class="admin-input" [value]="buffer?.contact.github" name="github">
                     <input type="submit" value="Save" class="admin-save">
                 </form>
 

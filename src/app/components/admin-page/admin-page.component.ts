@@ -9,7 +9,9 @@ import { PortfolioService } from 'src/app/service/portfolio.service';
 export class AdminPageComponent {
 
   buffer:any;
-
+  isMenuOpenEducation = false;
+  isMenuOpenProject = false;
+  
   constructor(private portfoliodata: PortfolioService )
   {
 
@@ -22,6 +24,17 @@ export class AdminPageComponent {
       console.log(data);
       this.buffer = data;
     });
+  }
+
+  toggleMenuEducation(): void
+  {
+    this.isMenuOpenEducation = !this.isMenuOpenEducation;
+
+  }
+
+  toggleMenuProject(): void
+  {
+    this.isMenuOpenProject = !this.isMenuOpenProject;
   }
 
 }
