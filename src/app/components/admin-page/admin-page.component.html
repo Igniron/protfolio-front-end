@@ -36,7 +36,9 @@
                     </form>
                 </div>
 
-                <input type="submit" value="Add" class="admin-save admin-add" (click)=toggleMenuEducation()>
+                <div class="conteiner-add">
+                    <input type="submit" value="Add" class="admin-save admin-add" (click)=toggleMenuEducation()>
+                </div>
 
                 <ng-container *ngTemplateOutlet="educationtemplate; context: { isOpen: isMenuOpenEducation }"></ng-container>
 
@@ -70,7 +72,9 @@
                     </div>
                 </form>
                 
-                <input type="submit" value="Add" class="admin-save" (click)=toggleMenuProject()>
+                <div class="conteiner-add"> 
+                    <input type="submit" value="Add" class="admin-save" (click)=toggleMenuProject()>
+                </div>
 
                 <ng-container *ngTemplateOutlet="projecttemplate; context: { isOpen: isMenuOpenProject }"></ng-container>
 
