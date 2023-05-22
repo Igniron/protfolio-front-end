@@ -17,9 +17,9 @@ export class RecentProjectsComponent {
 
   ngOnInit(): void
   {
-    this.portfoliodata.obtainData().subscribe( data =>
+    this.portfoliodata.obtainDataProject().subscribe( data =>
       {
-        this.buffer = data.recentProjects;
+        this.buffer = data;
       });
   }
 

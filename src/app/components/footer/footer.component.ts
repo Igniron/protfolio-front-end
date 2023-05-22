@@ -17,9 +17,10 @@ export class FooterComponent {
 
   ngOnInit(): void
   {
-    this.portfoliodata.obtainData().subscribe( data =>
+    this.portfoliodata.obtainDataContact().subscribe( data =>
       {
-        this.buffer = data.contact;
+        this.buffer = data;
+        console.log(this.buffer)
       });
   }
 

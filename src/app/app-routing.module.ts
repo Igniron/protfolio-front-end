@@ -8,9 +8,10 @@ import { AdminPageComponent } from './components/admin-page/admin-page.component
 
 
 const routes: Routes = [
-  { path: '', component: MainPageComponent },
   { path: 'login', component: LoginPageComponent },
   { path: 'admin', component: AdminPageComponent },
+  { path: 'home', component: MainPageComponent },
+  { path: '', redirectTo: '/home', pathMatch:'full' },
 ]
 
 @NgModule({

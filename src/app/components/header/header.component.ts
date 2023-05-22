@@ -17,9 +17,9 @@ export class HeaderComponent {
   
   ngOnInit(): void
   {
-    this.portfoliodata.obtainData().subscribe( data =>
+    this.portfoliodata.obtainDataHeader().subscribe( data =>
     {
-      this.buffer = data.header;
+      this.buffer = data;
     });
   }
 }

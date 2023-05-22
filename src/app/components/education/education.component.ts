@@ -17,9 +17,9 @@ export class EducationComponent {
 
   ngOnInit(): void
   {
-    this.portfoliodata.obtainData().subscribe( data =>
+    this.portfoliodata.obtainDataEducation().subscribe( data =>
       {
-        this.buffer = data.education;
+        this.buffer = data;
       });
   }
 

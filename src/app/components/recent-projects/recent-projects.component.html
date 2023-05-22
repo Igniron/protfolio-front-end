@@ -4,10 +4,10 @@
 
   <div class="projects-conteiner">
 
-    <a href={{recentProjects.link}} target="_blank" class="project-card" *ngFor=" let recentProjects of buffer">
-      <h3>{{recentProjects.tittle}}</h3>
-      <img [src]="recentProjects.img">
-      <p>{{recentProjects.description}}</p>
+    <a href={{recentProjects?.link}} target="_blank" class="project-card" *ngFor=" let recentProjects of buffer">
+      <h3>{{recentProjects?.title}}</h3>
+      <img [src]="recentProjects?.img">
+      <p>{{recentProjects?.description}}</p>
     </a>
 
   </div>

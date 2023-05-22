@@ -4,19 +4,18 @@
 
     <div class="conteiner-left-top">
       <p>Hello, i'm</p>
-      <p>{{buffer?.name}}</p>
-      <p>{{buffer?.profession}}</p>
-      <p>{{buffer?.description}}</p>
+      <p>{{buffer[0]?.name}}</p>
+      <p>{{buffer[0]?.profession}}</p>
+      <p>{{buffer[0]?.description}}</p>
     </div>
 
     <div class="conteiner-left-bottom">
       <a href="#education">Let's start</a>
     </div>
-
   </div>
 
   <div class="conteiner-right">
-      <img [src]="buffer?.img" alt="">
+      <img [src]="buffer[0]?.img" alt="">
   </div>
 
 </header>

@@ -12,10 +12,11 @@
                 <h3 class="admin-title">Header</h3>
 
                 <form>
-                    <input type="text" class="admin-input" [value]="buffer?.header.name" name="name">
-                    <input type="text" class="admin-input" [value]="buffer?.header.profession" name="profession">
-                    <textarea type="text" class="admin-textarea admin-input" [value]="buffer?.header.description" name="description"></textarea>
-                    <input type="submit" value="Save" class="admin-save">
+                    <input id="input-header-name" type="text" class="admin-input" [value]="bufferHeader?.name" name="name">
+                    <input id="input-header-profession"type="text" class="admin-input" [value]="bufferHeader?.profession" name="profession">
+                    <textarea id="input-header-description" type="text" class="admin-textarea admin-input" [value]="bufferHeader?.description" name="description"></textarea>
+                    <input id="input-header-img" type="text" class="admin-input" [value]="bufferHeader?.img" name="img">
+                    <button id="input-header-save" class="admin-save">Save</button>
                 </form>
 
             </div>
@@ -24,10 +25,10 @@
 
                 <h3 class="admin-title">Education</h3>
 
-                <div class="education-conteiner" *ngFor=" let education of buffer?.education">
+                <div class="education-conteiner" *ngFor=" let education of bufferEducation">
                     <form>
                         <input type="text" class="admin-input" [value]="education.name" placeholder="Name" name="name">
-                        <input type="text" class="admin-input" [value]="education.tittle" placeholder="Title" name="title">
+                        <input type="text" class="admin-input" [value]="education.title" placeholder="Title" name="title">
                         <input type="text" class="admin-input" [value]="education.state" placeholder="State" name="state">
                         <input type="text" class="admin-input" [value]="education.average" placeholder="Averge" name="average">
                         <input type="text" class="admin-input" [value]="education.link" placeholder="Link" name="link">
@@ -44,13 +45,13 @@
 
                 <ng-template #educationtemplate let-isOpen="isOpen">
 
-                    <form *ngIf="isMenuOpenEducation"> 
-                        <input type="text" class="admin-input" [value]="" placeholder="Name" name="name">
-                        <input type="text" class="admin-input" [value]="" placeholder="Title" name="title">
-                        <input type="text" class="admin-input" [value]="" placeholder="State" name="state">
-                        <input type="text" class="admin-input" [value]="" placeholder="Averge" name="average">
-                        <input type="text" class="admin-input" [value]="" placeholder="Link" name="link">
-                        <input type="submit" value="Save" class="admin-save">
+                    <form *ngIf="isOpen"> 
+                        <input type="text" class="admin-input" [(ngModel)]="educationData.name" placeholder="Name" name="name">
+                        <input type="text" class="admin-input" [(ngModel)]="educationData.title" placeholder="Title" name="title">
+                        <input type="text" class="admin-input" [(ngModel)]="educationData.state" placeholder="State" name="state">
+                        <input type="text" class="admin-input" [(ngModel)]="educationData.average" placeholder="Averge" name="average">
+                        <input type="text" class="admin-input" [(ngModel)]="educationData.link" placeholder="Link" name="link">
+                        <input type="submit" value="Save" class="admin-save" (click)="createEducation()">
                     </form>
 
                 </ng-template>
@@ -62,8 +63,8 @@
                 <h3 class="admin-title">Recent projects</h3>
 
                 <form>
-                    <div class="project-conteiner" *ngFor=" let projects of buffer?.recentProjects">
-                        <input type="text" class="admin-input" [value]="projects.tittle" placeholder="Name" name="title">
+                    <div class="project-conteiner" *ngFor=" let projects of bufferProject">
+                        <input type="text" class="admin-input" [value]="projects.title" placeholder="Name" name="title">
                         <input type="text" class="admin-input" [value]="projects.description" placeholder="Description" name="description">
                         <input type="text" class="admin-input" [value]="projects.link" placeholder="Link" name="link">
                         <input type="text" class="admin-input" [value]="projects.img" placeholder="Img" name="img">
@@ -80,12 +81,12 @@
 
                 <ng-template #projecttemplate let-isOpen="isOpen">
 
-                    <form *ngIf="isMenuOpenProject"> 
-                        <input type="text" class="admin-input" [value]="" placeholder="Name" name="title">
-                        <input type="text" class="admin-input" [value]="" placeholder="Description" name="description">
-                        <input type="text" class="admin-input" [value]="" placeholder="Link" name="link">
-                        <input type="text" class="admin-input" [value]="" placeholder="Img" name="img">
-                        <input type="submit" value="Save" class="admin-save">
+                    <form *ngIf="isOpen"> 
+                        <input type="text" class="admin-input" [(ngModel)]="projectData.title" placeholder="Name" name="title">
+                        <input type="text" class="admin-input" [(ngModel)]="projectData.description" placeholder="Description" name="description">
+                        <input type="text" class="admin-input" [(ngModel)]="projectData.link" placeholder="Link" name="link">
+                        <input type="text" class="admin-input" [(ngModel)]="projectData.img" placeholder="Img" name="img">
+                        <input type="submit" value="Save" class="admin-save" (click)="createProject()">
                     </form>
 
                 </ng-template>
@@ -97,14 +98,14 @@
                 <h3 class="admin-title">Footer</h3>
 
                 <form>
-                    <input type="text" class="admin-input" [value]="buffer?.contact.home" name="home">
-                    <input type="text" class="admin-input" [value]="buffer?.contact.location" name="location">
-                    <input type="text" class="admin-input" [value]="buffer?.contact.phone" name="phone">
-                    <input type="text" class="admin-input" [value]="buffer?.contact.email" name="email">
-                    <input type="text" class="admin-input" [value]="buffer?.contact.instagram" name="instagram">
-                    <input type="text" class="admin-input" [value]="buffer?.contact.twitter" name="twitter">
-                    <input type="text" class="admin-input" [value]="buffer?.contact.linkedin" name="linkedin">
-                    <input type="text" class="admin-input" [value]="buffer?.contact.github" name="github">
+                    <input type="text" class="admin-input" [value]="bufferContact?.home" name="home">
+                    <input type="text" class="admin-input" [value]="bufferContact?.location" name="location">
+                    <input type="text" class="admin-input" [value]="bufferContact?.phone" name="phone">
+                    <input type="text" class="admin-input" [value]="bufferContact?.email" name="email">
+                    <input type="text" class="admin-input" [value]="bufferContact?.instagram" name="instagram">
+                    <input type="text" class="admin-input" [value]="bufferContact?.twitter" name="twitter">
+                    <input type="text" class="admin-input" [value]="bufferContact?.linkedin" name="linkedin">
+                    <input type="text" class="admin-input" [value]="bufferContact?.github" name="github">
                     <input type="submit" value="Save" class="admin-save">
                 </form>
 
@@ -113,4 +114,17 @@
         </div>
     </div>
 </div>
+
+<script>
+
+const inputHeaderName = document.getElementById('input-header-name');
+    const inputHeaderSave = document.getElementById('input-header-save');
+
+    inputHeaderSave.addEventListener("click", (e) =>
+    {
+        e.preventDefault();
+        console.log(inputHeaderName);
+    })
+
+</script>
 
