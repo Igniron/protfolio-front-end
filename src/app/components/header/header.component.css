@@ -94,17 +94,17 @@ header p
 {
     display: flex;
     height: 100%;
-    width: 50%;
+    width: 35%;
 }
 
 .conteiner-right img
 {
-    background-color: #FFF;
+    background-color: #171C23;
     border-radius: 50%;
-    box-shadow: 10px 20px 20px 1px rgba(0,189,149,0.2);
     margin: auto;
     transition: all 250ms;
     width: 60%;
+    
 }
 
 

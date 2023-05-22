@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs'
 
 const url = 'http://localhost:8080';
@@ -10,12 +11,26 @@ const url = 'http://localhost:8080';
 
 export class PortfolioService {
 
-  constructor( private http:HttpClient ) { }
+  constructor( private http:HttpClient, private router: Router ) { }
 
+  private isLogged = false;
 
-  obtainData ():Observable<any>
+  toggleLogin():void
   {
-    return this.http.get('./assets/data/data.json');
+    this.isLogged = !this.isLogged;
+    console.log("Login: " + this.isLogged);
+  }
+
+  checkAuth():void
+  {
+    if(this.isLogged === true)
+    {
+      this.router.navigate(['/admin'])
+    }
+    else
+    {
+      this.router.navigate(['/home'])
+    }
   }
 
   obtainDataHeader ():Observable<any>

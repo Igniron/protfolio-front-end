@@ -7,7 +7,7 @@ import { AdminPageComponent } from './components/admin-page/admin-page.component
 
 
 
-const routes: Routes = [
+export const routes: Routes = [
   { path: 'login', component: LoginPageComponent },
   { path: 'admin', component: AdminPageComponent },
   { path: 'home', component: MainPageComponent },

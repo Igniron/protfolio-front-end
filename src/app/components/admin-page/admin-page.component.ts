@@ -1,4 +1,4 @@
-import { Component, NgModule } from '@angular/core';
+import { Component} from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
@@ -60,6 +60,10 @@ export class AdminPageComponent {
   
   ngOnInit(): void
   {
+    // Authenticacion
+
+    this.portfoliodata.checkAuth()
+
     //Metodos de carga de informacion
 
     this.portfoliodata.obtainDataHeader().subscribe( data =>
@@ -91,6 +95,11 @@ export class AdminPageComponent {
   toggleMenuProject(): void
   {
     this.isMenuOpenProject = !this.isMenuOpenProject;
+  }
+
+  Logout():void
+  {
+    this.portfoliodata.toggleLogin();
   }
 
 

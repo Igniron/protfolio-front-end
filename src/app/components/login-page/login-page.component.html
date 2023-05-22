@@ -7,9 +7,9 @@
         </div>
         <div class="login-window-form">
             <form>
-                <input type="text" class="user" placeholder="User">
-                <input type="password" class="password" placeholder="Password">
-                <input type="submit" value="login" class="submit-button" routerLink="/admin">
+                <input type="text" class="user" placeholder="User" [(ngModel)]="user" name="username">
+                <input type="password" class="password" placeholder="Password" [(ngModel)]="pass" name="password">
+                <input type="submit" value="login" class="submit-button" (click)="login()">
             </form>
         </div>
     </div>

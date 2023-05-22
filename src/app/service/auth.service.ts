@@ -1,33 +1,20 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
-
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 
+export class AuthService 
+{
+    private url = 'http://localhost:8080/get/user?id=1';
 
-export class AuthService {
-  private loggedIn = new BehaviorSubject<boolean>(false);
+    constructor (private http: HttpClient) { }
 
-  constructor() { }
+    gerUsername():Observable<any>
+    {
+        return this.http.get( this.url );
+    }
 
-  login() {
-    // Lógica de inicio de sesión
-    // ...
-
-    // Si el inicio de sesión es exitoso
-    this.loggedIn.next(true);
-  }
-
-  logout() {
-    // Lógica de cierre de sesión
-    // ...
-
-    this.loggedIn.next(false);
-  }
-
-  isLoggedIn() {
-    return this.loggedIn.asObservable();
-  }
 }
