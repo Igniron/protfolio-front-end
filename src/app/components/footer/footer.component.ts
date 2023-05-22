@@ -19,8 +19,7 @@ export class FooterComponent {
   {
     this.portfoliodata.obtainDataContact().subscribe( data =>
       {
-        this.buffer = data;
-        console.log(this.buffer)
+        this.buffer = data[0];
       });
   }
 

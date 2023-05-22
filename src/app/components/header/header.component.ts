@@ -19,7 +19,7 @@ export class HeaderComponent {
   {
     this.portfoliodata.obtainDataHeader().subscribe( data =>
     {
-      this.buffer = data;
+      this.buffer = data[0];
     });
   }
 }

@@ -12,11 +12,11 @@
                 <h3 class="admin-title">Header</h3>
 
                 <form>
-                    <input id="input-header-name" type="text" class="admin-input" [value]="bufferHeader?.name" name="name">
-                    <input id="input-header-profession"type="text" class="admin-input" [value]="bufferHeader?.profession" name="profession">
-                    <textarea id="input-header-description" type="text" class="admin-textarea admin-input" [value]="bufferHeader?.description" name="description"></textarea>
-                    <input id="input-header-img" type="text" class="admin-input" [value]="bufferHeader?.img" name="img">
-                    <button id="input-header-save" class="admin-save">Save</button>
+                    <input id="input-header-name" type="text" class="admin-input" [(ngModel)]="headerData.name" name="name">
+                    <input id="input-header-profession"type="text" class="admin-input" [(ngModel)]="headerData.profession" name="profession">
+                    <textarea id="input-header-description" type="text" class="admin-textarea admin-input" [(ngModel)]="headerData.description" name="description"></textarea>
+                    <input id="input-header-img" type="text" class="admin-input" [(ngModel)]="headerData.img" name="img">
+                    <button id="input-header-save" class="admin-save" (click)="updatePerson()">Save</button>
                 </form>
 
             </div>
@@ -27,13 +27,13 @@
 
                 <div class="education-conteiner" *ngFor=" let education of bufferEducation">
                     <form>
-                        <input type="text" class="admin-input" [value]="education.name" placeholder="Name" name="name">
-                        <input type="text" class="admin-input" [value]="education.title" placeholder="Title" name="title">
-                        <input type="text" class="admin-input" [value]="education.state" placeholder="State" name="state">
-                        <input type="text" class="admin-input" [value]="education.average" placeholder="Averge" name="average">
-                        <input type="text" class="admin-input" [value]="education.link" placeholder="Link" name="link">
-                        <input type="submit" value="Delete" class="admin-save admin-delete">
-                        <input type="submit" value="Save" class="admin-save">
+                        <input type="text" class="admin-input" [(ngModel)]="education.name" placeholder="Name" name="name">
+                        <input type="text" class="admin-input" [(ngModel)]="education.title" placeholder="Title" name="title">
+                        <input type="text" class="admin-input" [(ngModel)]="education.state" placeholder="State" name="state">
+                        <input type="text" class="admin-input" [(ngModel)]="education.average" placeholder="Averge" name="average">
+                        <input type="text" class="admin-input" [(ngModel)]="education.link" placeholder="Link" name="link">
+                        <input type="submit" value="Delete" class="admin-save admin-delete" (click)="deleteEducation(education.id)">
+                        <input type="submit" value="Save" class="admin-save" (click)="updateEducation (education, education.id)">
                     </form>
                 </div>
 
@@ -62,15 +62,13 @@
 
                 <h3 class="admin-title">Recent projects</h3>
 
-                <form>
-                    <div class="project-conteiner" *ngFor=" let projects of bufferProject">
-                        <input type="text" class="admin-input" [value]="projects.title" placeholder="Name" name="title">
-                        <input type="text" class="admin-input" [value]="projects.description" placeholder="Description" name="description">
-                        <input type="text" class="admin-input" [value]="projects.link" placeholder="Link" name="link">
-                        <input type="text" class="admin-input" [value]="projects.img" placeholder="Img" name="img">
-                        <input type="submit" value="Delete" class="admin-save admin-delete">
-                        <input type="submit" value="Save" class="admin-save">
-                    </div>
+                <form class="project-conteiner" *ngFor=" let project of bufferProject">
+                        <input type="text" class="admin-input" [(ngModel)]="project.title" placeholder="Name" name="title">
+                        <input type="text" class="admin-input" [(ngModel)]="project.description" placeholder="Description" name="description">
+                        <input type="text" class="admin-input" [(ngModel)]="project.link" placeholder="Link" name="link">
+                        <input type="text" class="admin-input" [(ngModel)]="project.img" placeholder="Img" name="img">
+                        <input type="submit" value="Delete" class="admin-save admin-delete" (click)="deleteProject(project.id)">
+                        <input type="submit" value="Save" class="admin-save" (click)="updateProject(project, project.id)">
                 </form>
                 
                 <div class="conteiner-add"> 
@@ -98,15 +96,15 @@
                 <h3 class="admin-title">Footer</h3>
 
                 <form>
-                    <input type="text" class="admin-input" [value]="bufferContact?.home" name="home">
-                    <input type="text" class="admin-input" [value]="bufferContact?.location" name="location">
-                    <input type="text" class="admin-input" [value]="bufferContact?.phone" name="phone">
-                    <input type="text" class="admin-input" [value]="bufferContact?.email" name="email">
-                    <input type="text" class="admin-input" [value]="bufferContact?.instagram" name="instagram">
-                    <input type="text" class="admin-input" [value]="bufferContact?.twitter" name="twitter">
-                    <input type="text" class="admin-input" [value]="bufferContact?.linkedin" name="linkedin">
-                    <input type="text" class="admin-input" [value]="bufferContact?.github" name="github">
-                    <input type="submit" value="Save" class="admin-save">
+                    <input type="text" class="admin-input" [(ngModel)]="contactData.home" name="home">
+                    <input type="text" class="admin-input" [(ngModel)]="contactData.location" name="location">
+                    <input type="text" class="admin-input" [(ngModel)]="contactData.phone" name="phone">
+                    <input type="text" class="admin-input" [(ngModel)]="contactData.email" name="email">
+                    <input type="text" class="admin-input" [(ngModel)]="contactData.instagram" name="instagram">
+                    <input type="text" class="admin-input" [(ngModel)]="contactData.twitter" name="twitter">
+                    <input type="text" class="admin-input" [(ngModel)]="contactData.linkedin" name="linkedin">
+                    <input type="text" class="admin-input" [(ngModel)]="contactData.github" name="github">
+                    <button id="input-header-save" class="admin-save" (click)="updateFooter ()">Save</button>
                 </form>
 
             </div>
@@ -114,17 +112,4 @@
         </div>
     </div>
 </div>
-
-<script>
-
-const inputHeaderName = document.getElementById('input-header-name');
-    const inputHeaderSave = document.getElementById('input-header-save');
-
-    inputHeaderSave.addEventListener("click", (e) =>
-    {
-        e.preventDefault();
-        console.log(inputHeaderName);
-    })
-
-</script>
 

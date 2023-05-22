@@ -16,15 +16,25 @@ const url = 'http://localhost:8080';
 export class AdminPageComponent {
 
   isMenuOpenEducation = false; isMenuOpenProject = false;
-  buffer:any; bufferHeader:any; bufferEducation:any; bufferProject:any; bufferContact:any;
+  bufferEducation:any; bufferProject:any;
 
-  educationData = {
+  headerData = 
+  {
+    name: '',
+    profession: '',
+    description: '',
+    img: '',
+  }
+
+  educationData = 
+  {
     name: '',
     title: '',
     state: '',
     average: '',
     link: '',
   };
+  
 
   projectData =
   {
@@ -32,6 +42,18 @@ export class AdminPageComponent {
     description: '',
     img: '',
     link: '',
+  }
+
+  contactData =
+  {
+    home: '',
+    location: '',
+    phone: '',
+    email: '',
+    instagram: '',
+    twitter: '',
+    linkedin: '',
+    github: '',
   }
   
   constructor(private portfoliodata: PortfolioService, private http:HttpClient ) {}
@@ -42,7 +64,7 @@ export class AdminPageComponent {
 
     this.portfoliodata.obtainDataHeader().subscribe( data =>
       {
-        this.bufferHeader = data[0];
+        this.headerData = data[0];
       });
 
     this.portfoliodata.obtainDataEducation().subscribe( data =>
@@ -57,7 +79,7 @@ export class AdminPageComponent {
 
     this.portfoliodata.obtainDataContact().subscribe( data =>
       {
-        this.bufferContact = data[0];
+        this.contactData = data[0];
       });
   }
 
@@ -107,13 +129,13 @@ export class AdminPageComponent {
         'Content-Type': 'application/json'
       })
     };
-
     return this.http.post<any>(url + "/new/project", projectData, httpOptions);
   }
 
   createProject ()
   {
     this.createProjectData(this.projectData).subscribe(
+      
       response =>
       {
         console.log('Successfully created', response);
@@ -128,6 +150,163 @@ export class AdminPageComponent {
 
   // Metodos de update
 
-  
+  personData( headerData:any ):Observable<any>
+  {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    };
+
+    return this.http.post<any>(url + `/update/person?id=1`, headerData, httpOptions);
+  }
+
+  updatePerson ()
+  {
+    this.personData(this.headerData).subscribe(
+      response =>
+      {
+        console.log('Successfully updated', response);
+        location.reload();
+      },
+      error =>
+      {
+        console.log('Error:', error);
+      }
+    )
+  }
+
+  footerData( contactData:any ):Observable<any>
+  {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    };
+
+    return this.http.post<any>(url + `/update/contact?id=1`, contactData, httpOptions);
+  }
+
+  updateFooter ()
+  {
+    this.footerData(this.contactData).subscribe(
+      response =>
+      {
+        console.log('Successfully updated', response);
+        location.reload();
+      },
+      error =>
+      {
+        console.log('Error:', error);
+      }
+    )
+  }
+
+  educationDataUpdate( education:any, id:any)
+  {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    };
+
+    return this.http.post<any>(url + `/update/education?id=${id}`, education, httpOptions);
+  }
+
+  updateEducation ( education:any, id: any )
+  {
+    this.educationDataUpdate(education, id).subscribe(
+      response =>
+      {
+        console.log('Successfully updated', response);
+        location.reload();
+      },
+      error =>
+      {
+        console.log('Error:', error);
+      }
+    )
+  }
+
+  projectDataUpdate( project:any, id:any)
+  {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    };
+
+    return this.http.post<any>(url + `/update/project?id=${id}`, project, httpOptions);
+  }
+
+  updateProject( project:any, id:any )
+  {
+    this.projectDataUpdate( project, id ).subscribe(
+      response =>
+      {
+        console.log('Successfully updated', response);
+        location.reload();
+      },
+      error =>
+      {
+        console.log('Error:', error);
+      }
+    )
+  }
+
+
+  // Delete methods
+
+  educationDataDelete( id:any )
+  {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    };
+
+    return this.http.delete<any>(url + `/delete/education?id=${id}`, httpOptions);
+  }
+
+  deleteEducation ( id: any )
+  {
+    this.educationDataDelete( id ).subscribe(
+      response =>
+      {
+        console.log('Successfully deleted', response);
+        location.reload();
+      },
+      error =>
+      {
+        console.log('Error:', error);
+      }
+    )
+  }
+
+  projectDataDelete( id:any )
+  {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    };
+
+    return this.http.delete<any>(url + `/delete/project?id=${id}`, httpOptions);
+  }
+
+  deleteProject ( id: any )
+  {
+    this.projectDataDelete( id ).subscribe(
+      response =>
+      {
+        console.log('Successfully deleted', response);
+        location.reload();
+      },
+      error =>
+      {
+        console.log('Error:', error);
+      }
+    )
+  }
 
 }
