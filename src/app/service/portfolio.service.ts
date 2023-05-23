@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs'
 
-const url = 'http://localhost:8080';
+const url = 'https://portfolio-backend-r88w.onrender.com';
 
 @Injectable({
   providedIn: 'root'

@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 
 export class AuthService 
 {
-    private url = 'http://localhost:8080/get/user?id=1';
+    private url = 'https://portfolio-backend-r88w.onrender.com/get/user?id=1';
 
     constructor (private http: HttpClient) { }
 

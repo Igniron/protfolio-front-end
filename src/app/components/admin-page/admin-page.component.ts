@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 
 import { PortfolioService } from 'src/app/service/portfolio.service';
 
-const url = 'http://localhost:8080';
+const url = 'https://portfolio-backend-r88w.onrender.com';
 
 @Component({
   selector: 'app-admin-page',
@@ -122,7 +122,6 @@ export class AdminPageComponent {
       response =>
       {
         console.log('Successfully created', response);
-        location.reload();
       },
       error =>
       {
@@ -148,7 +147,6 @@ export class AdminPageComponent {
       response =>
       {
         console.log('Successfully created', response);
-        location.reload();
       },
       error =>
       {
@@ -176,7 +174,6 @@ export class AdminPageComponent {
       response =>
       {
         console.log('Successfully updated', response);
-        location.reload();
       },
       error =>
       {
@@ -202,7 +199,6 @@ export class AdminPageComponent {
       response =>
       {
         console.log('Successfully updated', response);
-        location.reload();
       },
       error =>
       {
@@ -228,7 +224,6 @@ export class AdminPageComponent {
       response =>
       {
         console.log('Successfully updated', response);
-        location.reload();
       },
       error =>
       {
@@ -254,7 +249,6 @@ export class AdminPageComponent {
       response =>
       {
         console.log('Successfully updated', response);
-        location.reload();
       },
       error =>
       {
@@ -283,7 +277,6 @@ export class AdminPageComponent {
       response =>
       {
         console.log('Successfully deleted', response);
-        location.reload();
       },
       error =>
       {
@@ -309,7 +302,6 @@ export class AdminPageComponent {
       response =>
       {
         console.log('Successfully deleted', response);
-        location.reload();
       },
       error =>
       {

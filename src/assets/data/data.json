@@ -4,7 +4,7 @@
     "name": "Ignacio Nicolás Roncal",
     "profession": "Full stack web developer",
     "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur cumque inventore eos temporibus corporis doloribus reiciendis. In voluptatum ex accusantium dolor sed iusto harum nulla iure, iste architecto saepe accusamus?",
-    "img": "https://i.pinimg.com/originals/44/3d/97/443d97d304c187f324b8d94e7f245f61.png"
+    "img": "../../../assets/img/profilephoto.png"
   },
   "education":
   [
